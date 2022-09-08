@@ -19,8 +19,9 @@ function LandingPage() {
     fetch(endpoint)
       .then((response) => response.json())
       .then((response) => {
+        console.log(response.results);
         setMovies([...Movies, ...response.results]);
-        setMainMovieImage(response.results[1]);
+        setMainMovieImage(response.results[0]);
         setCurrentPage(response.page);
       });
   };
